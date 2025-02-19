@@ -1,5 +1,7 @@
+import { useState } from "react";
+
 export default function BusinessCard({ name, email, logo = undefined }) {
-  let isBackShowing = false;
+  const [isBackShowing, setIsBackShowing] = useState(false);
 
   return (
     <div className="business-card">
@@ -12,7 +14,7 @@ export default function BusinessCard({ name, email, logo = undefined }) {
             <p>{email}</p>
           </div>
 
-          <button onClick={() => { isBackShowing = true }}>
+          <button onClick={() => { setIsBackShowing(true) }}>
             More
           </button>
         </div>}
@@ -21,7 +23,7 @@ export default function BusinessCard({ name, email, logo = undefined }) {
         <div className="side back">
           <p>Ezra Cornell co-founded Cornell University in 1865.</p>
 
-          <button onClick={() => { isBackShowing = false }}>
+          <button onClick={() => { setIsBackShowing(false) }}>
             Less
           </button>
         </div>}
